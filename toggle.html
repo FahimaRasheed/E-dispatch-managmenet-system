@@ -1,0 +1,225 @@
+<!-- <!DOCTYPE html> <html> <script> function toggleField(hideObj,showObj){ hideObj.disabled=true; hideObj.style.display='none'; showObj.disabled=false; showObj.style.display='inline'; showObj.focus(); } </script> <body> <form name="BrowserSurvey" action="#"> Browser: <select name="browser" onchange="if(this.options[this.selectedIndex].value=='customOption'){ toggleField(this,this.nextSibling); this.selectedIndex='0'; }"> <option></option> <option value="customOption">[type a custom value]</option> <option>Chrome</option> <option>Firefox</option> <option>Internet Explorer</option> <option>Opera</option> <option>Safari</option> </select><input name="browser" style="display:none;" disabled="disabled" onblur="if(this.value==''){toggleField(this,this.previousSibling);}"> <input type="submit" value="Submit"> </form> </body> </html> -->
+<!DOCTYPE html> 
+
+<html lang="en"> 
+
+  
+
+<head> 
+
+  
+
+    <!-- html2pdf CDN--> 
+
+    <script src= 
+
+"https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"> 
+
+    </script> 
+
+  
+
+    <style> 
+
+        .container { 
+
+            position: fixed; 
+
+            top: 20%; 
+
+            left: 28%; 
+
+            margin-top: -65px; 
+
+            margin-left: -100px; 
+
+            border-radius: 7px; 
+
+        } 
+
+  
+
+        .card { 
+
+            box-sizing: content-box; 
+
+            width: 700px; 
+
+            height: 150px; 
+
+            padding: 30px; 
+
+            border: 1px solid black; 
+
+            font-style: sans-serif; 
+
+            background-color: #f0f0f0; 
+
+        } 
+
+  
+
+        #button { 
+
+            background-color: #4caf50; 
+
+            border-radius: 5px; 
+
+            margin-left: 650px; 
+
+            margin-bottom: 5px; 
+
+            color: white; 
+
+        } 
+
+  
+
+        *{
+    font-size: 10;
+    font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+  }
+  img{
+    margin-top: 1px;
+  }
+
+    #h1{
+      margin-left: 35px;
+      margin-top: -25px;
+    }
+    #h2{
+      margin-left: 35px;
+      margin-top: -15px;
+    }
+    .div{
+      margin-left: 60px;
+
+    }
+    .div0{
+      width: 20%;
+      margin-left: 60px;
+      margin-top: 1px;
+    }
+    .div1{
+      /*float: 0 auto;*/
+      width: 53.3%;
+      margin: 0 auto;
+      margin-top: -270px;
+      height: 30px;
+      margin-left: 400px;
+    }
+    #h3{
+      margin-left: 10px;
+    }
+    #h4{
+      margin-left: 45px;
+    }
+    .div2{
+       margin-left: 745px;
+       margin-top: 160px;
+    }
+    .div3{
+      background-color: grey;
+      height: 1px;
+      width: 1000px;
+      margin-left: 150px;
+    }
+    .div4{
+      margin-left: 1000px;
+      margin-top:6px;
+    }
+    .div5{
+      margin-top: 60px;}
+    .div6{
+      margin-top: 50px;
+
+      }
+    
+    .div7{
+      margin-left: 1000px;
+    }
+
+    </style> 
+
+</head> 
+
+  
+
+<body> 
+
+    <div class="container"> 
+
+        <button id="button">Generate PDF</button> 
+
+        <div class="card" id="makepdf"> 
+	  <div class="div">
+  <div class="div0">
+  <img src="logo.png">
+  <h4 id="h1"><b>Dr.S Siva Sathya</b></h4>
+  <h5 id="h2">Professor & Head</h5>
+</div>
+<div class="div1">
+  <h3 id="h3"><b>PONDICHERRY UNIVERSITY</b></h3>
+  <h4><b>DEPARTMENT OF COMPUTER SCIENCE</b></h4>
+  <h5 id="h4">(SCHOOL OF ENGINEERING & TECHNOLOGY)</h5>
+</div>
+<div class="div2">
+  <h6>R.V Nagar,Kalapet,Puducherry - 605014<br>Phone:0413-2654978 (D) 0413-2654875 (O)<br>Mobile:91-9487566093.<br><u>E-Mail : ssivasathya@gmail.com</u></h6>
+</div>
+</div>
+<div class="div3"></div>
+<div class="div4"><b>Date :<?php echo date("d/m/y");?></b></div>
+<div class="div5">
+  <h3><center><u>COURSE COMPLETION CERTIFICATE</u></center></h3>
+</div>
+<div class="div6">
+  
+  <?php
+if (isset($_POST['certificate'])) 
+{
+  $course=$_POST['course'];
+  $reg=$_POST['reg'];
+  $name=$_POST['name'];
+  $syear=$_POST['syear'];
+  $eyear=$_POST['eyear'];
+  
+echo "<h5>&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbspThis is to certify that Mr/Ms. ".$name."(Reg. No:".$reg.") was a student of ".$course." .Department of Computer Science of this University in the academic year ".$syear." - ".$eyear." . He/She has completed all his/her course works and project work .</h5>";
+
+}
+?>
+
+
+</div>
+<div class="div7">
+  <h5><b>Head of the Department</b></h5>
+</div>
+
+            
+
+        </div> 
+
+    </div> 
+
+  
+
+    <script> 
+
+        var button = document.getElementById("button"); 
+
+        var makepdf = document.getElementById("makepdf"); 
+
+  
+
+        button.addEventListener("click", function () { 
+
+            html2pdf().from(makepdf).save(); 
+
+        }); 
+
+    </script> 
+
+</body> 
+
+  
+
+</html>

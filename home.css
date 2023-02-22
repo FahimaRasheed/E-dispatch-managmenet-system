@@ -1,0 +1,73 @@
+.home1{
+	border: 15px outset black;
+	background-color: black;
+	background-size: cover;
+	width: 1340px;
+}
+#bt{
+	float:middle;
+	margin-left: 1200px;
+
+}
+body{
+	/*margin: 0;
+	padding: 0;*/
+	
+	width: 100%;
+
+}
+.home2{
+	
+	
+}
+/*@keyframes slide{
+	25%{
+		background: url(0.jpg);
+		background-repeat: no-repeat;
+		background-size: cover; 
+
+	}
+	50%{
+		background: url(1.jpeg); 
+		background-repeat: no-repeat;
+		background-size: cover; 
+	}
+	75%{
+		background: url(2.jpg); 
+		background-repeat: no-repeat;
+		background-size: cover; 
+	}
+	100%{
+		background: url(3.jpg); 
+		background-repeat: no-repeat;
+		background-size: cover; 
+	}
+	
+}*/
+.background{
+	width: 1340px;
+	height: 700px;
+	background: #6E6E6E;
+	margin: 5px auto;
+	animation: slide 20s infinite;
+
+	
+}
+.home3{
+	width: 1400px;
+	height: 1000px;
+}
+#img1{
+	margin-top: 200px;
+	margin-left: -10px;
+}
+#h1{
+	color: white;
+}
+.home{
+	position: relative;
+	/*width: 980px;*/
+	margin: 100px auto 0 auto;
+	background: #313131;
+	width: 1340px;
+}
